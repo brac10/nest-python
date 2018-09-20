@@ -36,7 +36,13 @@ def get_event_stream(token):
         'Accept': 'text/event-stream'
     }
     http = urllib3.PoolManager()
-    response = http.request('GET', nest_api_url, headers=headers, preload_content=False)
+    response = http.request('GET', nest_api_url, headers=headers, preload_content=False, redirect=False)
+    if (response.status == 307):
+        redirect_url = response.headers.get("Location")
+        response = http.request('GET', redirect_url, headers=headers, preload_content=False, redirect=False)
+    if (response.status != 200):
+        print "An error occurred! Response code is ", response.status
+
     client = sseclient.SSEClient(response)
     return client
 

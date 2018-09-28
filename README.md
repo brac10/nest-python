@@ -1,4 +1,4 @@
-# Python Works with Nest Sample App
+# Python Works with Nest on a Raspberry PI V2 
 
 
 NOTE: This is not an official Google product.
@@ -6,7 +6,7 @@ NOTE: This is not an official Google product.
 ## 1. Introduction
 
 This is a simple web app that talks to the Works with Nest API using Python and  
-the Flask web framework. You'll use a Nest product to be accessed from the app.  
+the Flask web framework on a Raspberry PI.  
    
 —————————————————————————————————————
 
